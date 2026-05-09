@@ -114,7 +114,7 @@ for model in models:
 
             unique_ans = set()
             for _ in tqdm(range(repeats)):
-                payload = {
+                payload = {#TODO: thinking is disabled, limited compute
                     "prompt": fullq,
                     "n_predict": 1024,
                     "stream": False  # Set to True if you want to process tokens one by one

@@ -1,0 +1,95 @@
+{
+    "0fc9890b3e71cb8aebc9be049501e12c3c9d91d988cf4fb243e557d6bced6efe": {
+        "None_answer": 2,
+        "correct": 13,
+        "incorrect": 7,
+        "unique_answers": 5
+    },
+    "17dbccf114b6dfa9e688d433c0a65795a3dfc6e86f38d867bf0c8356e1a578d1": {
+        "None_answer": 9,
+        "correct": 0,
+        "incorrect": 20,
+        "unique_answers": 5
+    },
+    "27c01be78290b3594b76f2f72dc09930e2579d5ffabf5e063d02b8f13dce2af2": {
+        "None_answer": 13,
+        "correct": 2,
+        "incorrect": 18,
+        "unique_answers": 6
+    },
+    "3104e9d772827304a1cbb002b1783cd9be2b2956e99a762bd7ed87175473d050": {
+        "None_answer": 8,
+        "correct": 0,
+        "incorrect": 20,
+        "unique_answers": 4
+    },
+    "331200fd4d9c9cf8ec1691018938f263516958c04eac0fcd6543b761a5409cca": {
+        "None_answer": 9,
+        "correct": 1,
+        "incorrect": 19,
+        "unique_answers": 9
+    },
+    "3c0619d963d30700ced35ccad6f66a9384344a8199e228dabf40546552da9b13": {
+        "None_answer": 4,
+        "correct": 0,
+        "incorrect": 20,
+        "unique_answers": 10
+    },
+    "676c9cd65947acec18af20fd819607f2aa5ebf272d7fe597c469ada2494da619": {
+        "None_answer": 15,
+        "correct": 5,
+        "incorrect": 15,
+        "unique_answers": 2
+    },
+    "748fc87fd6b99cbe0a507326ea3e2290e6b6526b7287d989b3f014cca8c2389e": {
+        "None_answer": 13,
+        "correct": 1,
+        "incorrect": 19,
+        "unique_answers": 6
+    },
+    "77cbd4a3ffcdef3e1155c4c7d065bff2fda72ccf66b47222559a39f533fe3116": {
+        "None_answer": 2,
+        "correct": 18,
+        "incorrect": 2,
+        "unique_answers": 2
+    },
+    "96fa1dc4f876f66372791dcbc5eccb226581d92b6954834391467a10631834ca": {
+        "None_answer": 7,
+        "correct": 11,
+        "incorrect": 9,
+        "unique_answers": 4
+    },
+    "a8373bae587193840cda1c346d8e3ea59ca159d6a9ce17e48d9f9e90c93eca20": {
+        "None_answer": 13,
+        "correct": 4,
+        "incorrect": 16,
+        "unique_answers": 5
+    },
+    "af45985718dbdeb7bfda4d8007f3c44be0ece9f30ddaebbc7ccf32cbf3fdb464": {
+        "None_answer": 11,
+        "correct": 2,
+        "incorrect": 18,
+        "unique_answers": 8
+    },
+    "b847c49af6b784ecde7490d24bfdd74dc0a8f96e7714343f18f806542c0e9d2c": {
+        "None_answer": 12,
+        "correct": 0,
+        "incorrect": 20,
+        "unique_answers": 6
+    },
+    "b9dc1e30081a5b3a833dd18bc7d9022728504838baeff3faf7f3ac433af11605": {
+        "None_answer": 3,
+        "correct": 1,
+        "incorrect": 19,
+        "unique_answers": 5
+    },
+    "cae0d30b56aafa0d692f3dd2438b2b291025f09477d11eea4ad841aad3362b9e": {
+        "None_answer": 7,
+        "correct": 9,
+        "incorrect": 11,
+        "unique_answers": 6
+    },
+    "date": "2026-05-09",
+    "model": "LiquidAI/LFM2.5-350M",
+    "repeats": 20
+}

@@ -51,6 +51,7 @@ for root, _dir, files in os.walk(result_path):
             )
 
 plot_date = stats[0]["plot_date"]
+repeats = stats[0]["repeats"]
 # --- Data Setup (recreating your df logic) ---
 df = pd.DataFrame(stats)
 df = df[['model', 'correct', 'consistency', 'repeats', 'eval_date']]
@@ -100,7 +101,7 @@ ax.text(9, header_y, "DATE", va='center', ha='center', weight='bold', color='#33
 # Final Touches
 ax.set_ylim(len(df) - 0.5, -1.5)
 ax.set_xlim(-0.5, 10)
-plt.title(f"Model Evaluations • {plot_date}", fontsize=16, fontweight='bold', pad=10, loc='left')
+plt.title(f"Model Evaluations • {plot_date} • {repeats}", fontsize=16, fontweight='bold', pad=10, loc='left')
 
 plt.text(0.05, 0.02, f"Source: {source_link}",
          transform=fig.transFigure,
