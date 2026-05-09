@@ -1,0 +1,6 @@
+Qwen/Qwen3.5-0.8B
+Qwen/Qwen3-0.6B
+Qwen/Qwen3-0.6B
+LiquidAI/LFM2.5-350M
+ibm-granite/granite-4.0-350m
+ggml-org/gemma-3-1b-it-GGUF

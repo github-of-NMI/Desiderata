@@ -1,0 +1,11 @@
+Generate a list of problems with correct answers. Either math problems or multiple choice or asking it to write a program that does a specific task (eg print a random string)
+	math already works, multiple choice is possible, but no example yet
+	executing code is out of reach for now
+
+Publish this for a whole bunch of ai models on hugging face. in a git repo in text format(eg json)
+
+For every solution also report token usage (idk how to do this, does transformers lib expose this data?
+
+Transitive benchmarking: 
+You have a testset, evaluate some models on it. Use the scores of the evaluated models to build a mapping from public benchmarks to your own results.  Use the best model given by the mapping (ofcourse test it also)
+make the Readme.md: this is a usecase of this project, include the explanation / implementation in the repo
