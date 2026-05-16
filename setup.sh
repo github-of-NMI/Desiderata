@@ -6,5 +6,5 @@ brew install llama.cpp
 python -m venv env
 source env/bin/activate
 
-pip install -U pandas matplotlib requests pyright ruff tqdm huggingface-hub
+pip install -U pandas pandas-stubs matplotlib requests pyright ruff tqdm huggingface-hub
 

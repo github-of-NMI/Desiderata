@@ -1,6 +1,11 @@
-Qwen/Qwen3.5-0.8B
-Qwen/Qwen3-0.6B
-Qwen/Qwen3-0.6B
-LiquidAI/LFM2.5-350M
-ibm-granite/granite-4.0-350m
 ggml-org/gemma-3-1b-it-GGUF
+#prism-ml/Bonsai-8B-gguf
+prism-ml/Bonsai-4B-gguf
+WithinUsAI/Opus4.7-GODs.Ghost.Codex-4B.GGuF
+theminji/Qwen3.5-2B-CasualConversations
+LiquidAI/LFM2-2.6B-Exp-GGUF
+LiquidAI/LFM2.5-1.2B-Thinking-GGUF
+LiquidAI/LFM2.5-350M-GGUF
+#bigatuna/Qwen3.5-9b-Sushi-Coder-RL-GGUF
+#mradermacher/Qwen3.5-9B-GLM5.1-Distill-v1-i1-GGUF
+#adilkairolla/zeta-2.1-GGUF

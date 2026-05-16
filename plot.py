@@ -1,11 +1,10 @@
 import json
 import re
 import os
-import sys
 from datetime import date
 import matplotlib.pyplot as plt
 import pandas as pd
-import numpy as np
+from typing import cast
 
 result_path = "results/"
 graphics_path = "graphics/"
@@ -63,6 +62,7 @@ df_display['consistency'] = df['consistency'].map('{:.2f}%'.format)
 
 fig, ax = plt.subplots(figsize=(10, 4))
 ax.axis('off')
+fig.subplots_adjust(left=0, right=1, bottom=0.15, top=1)
 
 # Background shading for rows (Zebra Striping)
 for i in range(len(df)):
@@ -75,33 +75,34 @@ ax.axhline(y=-0.5, color='black', linewidth=1.5, xmin=0.05, xmax=0.95)
 # Plot the Text
 cols = df_display.columns
 for i, row in df_display.iterrows():
-    y_pos = df_display.index.get_loc(i)
+    format_model_name = row["model"]
+    y_pos = cast(float, df_display.index.get_loc(i))
     
     # Model Name (Left Aligned)
-    ax.text(0, y_pos, row['model'], va='center', ha='left', weight='bold' if y_pos == 0 else 'normal')
+    ax.text(0, y_pos, format_model_name, va='center', ha='left', weight='bold' if y_pos == 0 else 'normal')
     
     # Correct % (Centered)
-    ax.text(4, y_pos, row['correct'], va='center', ha='center', weight='bold')
+    ax.text(5.5, y_pos, row['correct'], va='center', ha='center', weight='bold')
     
     # Small visual bar for "Correct" performance
-    bar_width = (df.loc[i, 'correct'] / 100) * 1.5
-    ax.barh(y_pos, bar_width, left=4.5, height=0.4, color='#3498db', alpha=0.6)
+    bar_width = (cast(float, df.at[i, 'correct']) / 100) * 1.5
+    ax.barh(y_pos, bar_width, left=6.0, height=0.4, color='#3498db', alpha=0.6)
     
     # Other stats
-    ax.text(7, y_pos, row['consistency'], va='center', ha='center', color='#555555')
-    ax.text(9, y_pos, row['eval_date'], va='center', ha='center', fontsize=9, color='#888888')
+    ax.text(8.5, y_pos, row['consistency'], va='center', ha='center', color='#555555')
+    ax.text(10.5, y_pos, row['eval_date'], va='center', ha='center', fontsize=9, color='#888888')
 
 # 4. Column Headers
 header_y = -1
 ax.text(0, header_y, "MODEL", va='center', ha='left', weight='bold', color='#333333')
-ax.text(4, header_y, "CORRECT", va='center', ha='center', weight='bold', color='#333333')
-ax.text(7, header_y, "CONSISTENCY", va='center', ha='center', weight='bold', color='#333333')
-ax.text(9, header_y, "DATE", va='center', ha='center', weight='bold', color='#333333')
+ax.text(5.5, header_y, "CORRECT", va='center', ha='center', weight='bold', color='#333333')
+ax.text(8.5, header_y, "CONSISTENCY", va='center', ha='center', weight='bold', color='#333333')
+ax.text(10.5, header_y, "DATE", va='center', ha='center', weight='bold', color='#333333')
 
 # Final Touches
 ax.set_ylim(len(df) - 0.5, -1.5)
-ax.set_xlim(-0.5, 10)
-plt.title(f"Model Evaluations • {plot_date} • {repeats}", fontsize=16, fontweight='bold', pad=10, loc='left')
+ax.set_xlim(-0.5, 11.5)
+plt.title(f"Model Evaluations • {plot_date} • n={repeats}", fontsize=16, fontweight='bold', pad=10, loc='center')
 
 plt.text(0.05, 0.02, f"Source: {source_link}",
          transform=fig.transFigure,

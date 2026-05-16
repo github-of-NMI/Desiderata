@@ -1,221 +1,221 @@
 {
     "0fc9890b3e71cb8aebc9be049501e12c3c9d91d988cf4fb243e557d6bced6efe": {
         "None_answer": 0,
-        "correct": 14,
-        "incorrect": 6,
-        "unique_answers": 7
+        "correct": 20,
+        "incorrect": 0,
+        "unique_answers": 1
     },
     "17dbccf114b6dfa9e688d433c0a65795a3dfc6e86f38d867bf0c8356e1a578d1": {
-        "None_answer": 4,
-        "correct": 1,
-        "incorrect": 19,
-        "unique_answers": 6
+        "None_answer": 11,
+        "correct": 4,
+        "incorrect": 16,
+        "unique_answers": 7
     },
     "190c4b0e1641d97485647b9f732fbd793a0e4bd1a9ae8fe74a8127bee7619035": {
-        "None_answer": 13,
-        "correct": 1,
-        "incorrect": 19,
-        "unique_answers": 8
+        "None_answer": 8,
+        "correct": 0,
+        "incorrect": 20,
+        "unique_answers": 6
     },
     "1b4ce1f66b59a99a1a8144ee49c76c4cdf08afb29d18998544700ae466a04498": {
-        "None_answer": 9,
-        "correct": 0,
-        "incorrect": 20,
-        "unique_answers": 10
-    },
-    "271a41620079c82859423cd72367bfbc13db1232106f95a468495b3d88f1ade4": {
-        "None_answer": 4,
-        "correct": 7,
-        "incorrect": 13,
-        "unique_answers": 8
-    },
-    "27c01be78290b3594b76f2f72dc09930e2579d5ffabf5e063d02b8f13dce2af2": {
-        "None_answer": 12,
-        "correct": 1,
-        "incorrect": 19,
-        "unique_answers": 5
-    },
-    "3104e9d772827304a1cbb002b1783cd9be2b2956e99a762bd7ed87175473d050": {
-        "None_answer": 5,
-        "correct": 2,
-        "incorrect": 18,
-        "unique_answers": 8
-    },
-    "331200fd4d9c9cf8ec1691018938f263516958c04eac0fcd6543b761a5409cca": {
-        "None_answer": 13,
-        "correct": 1,
-        "incorrect": 19,
-        "unique_answers": 8
-    },
-    "3ba5493c7d0008dcfaf09125f7366fdc98307fc712938a84bcead523d76310e5": {
-        "None_answer": 5,
-        "correct": 8,
-        "incorrect": 12,
-        "unique_answers": 8
-    },
-    "3c0619d963d30700ced35ccad6f66a9384344a8199e228dabf40546552da9b13": {
-        "None_answer": 7,
+        "None_answer": 3,
         "correct": 3,
         "incorrect": 17,
-        "unique_answers": 8
-    },
-    "4b44cdb17ccf75e9ba0e40691b57fcb1758f66968ca5982f9e33bb5e9b787206": {
-        "None_answer": 9,
-        "correct": 0,
-        "incorrect": 20,
-        "unique_answers": 9
-    },
-    "5636a94ea130ebbfb435c573be57d9d76ff201fdd18ff872734b60ea6181d9a8": {
-        "None_answer": 9,
-        "correct": 1,
-        "incorrect": 19,
-        "unique_answers": 10
-    },
-    "5a1661f494cb8dd5c6951ef5a12d00cb2cffd41370c50f11de57602f94c0f842": {
-        "None_answer": 8,
-        "correct": 1,
-        "incorrect": 19,
         "unique_answers": 11
     },
-    "669e9b992c2347b5d41e19edfd79b3beed4ebe773311336642741e41e0956439": {
-        "None_answer": 15,
-        "correct": 0,
-        "incorrect": 20,
-        "unique_answers": 5
-    },
-    "676c9cd65947acec18af20fd819607f2aa5ebf272d7fe597c469ada2494da619": {
-        "None_answer": 12,
+    "271a41620079c82859423cd72367bfbc13db1232106f95a468495b3d88f1ade4": {
+        "None_answer": 9,
         "correct": 8,
         "incorrect": 12,
-        "unique_answers": 2
+        "unique_answers": 4
     },
-    "6f826eeeb32fe26b422263ac9c2af91b5c63e6d00b0554adb40efb6a969a2f1c": {
-        "None_answer": 6,
-        "correct": 2,
-        "incorrect": 18,
-        "unique_answers": 8
+    "27c01be78290b3594b76f2f72dc09930e2579d5ffabf5e063d02b8f13dce2af2": {
+        "None_answer": 0,
+        "correct": 14,
+        "incorrect": 6,
+        "unique_answers": 3
     },
-    "748fc87fd6b99cbe0a507326ea3e2290e6b6526b7287d989b3f014cca8c2389e": {
-        "None_answer": 7,
+    "3104e9d772827304a1cbb002b1783cd9be2b2956e99a762bd7ed87175473d050": {
+        "None_answer": 11,
         "correct": 3,
         "incorrect": 17,
         "unique_answers": 7
     },
-    "77cbd4a3ffcdef3e1155c4c7d065bff2fda72ccf66b47222559a39f533fe3116": {
-        "None_answer": 2,
+    "331200fd4d9c9cf8ec1691018938f263516958c04eac0fcd6543b761a5409cca": {
+        "None_answer": 11,
+        "correct": 2,
+        "incorrect": 18,
+        "unique_answers": 3
+    },
+    "3ba5493c7d0008dcfaf09125f7366fdc98307fc712938a84bcead523d76310e5": {
+        "None_answer": 0,
         "correct": 18,
         "incorrect": 2,
         "unique_answers": 2
     },
-    "7f2ab01483889cfad6fdb67d5fbaef78f7430a4ab85667750366538c5c1728d3": {
-        "None_answer": 2,
+    "3c0619d963d30700ced35ccad6f66a9384344a8199e228dabf40546552da9b13": {
+        "None_answer": 7,
         "correct": 0,
         "incorrect": 20,
-        "unique_answers": 11
+        "unique_answers": 3
     },
-    "8e9ff496644fcd4d69d0b4aedf2e86a6b62369667f868a4f8e48cfffa715f3dc": {
+    "4b44cdb17ccf75e9ba0e40691b57fcb1758f66968ca5982f9e33bb5e9b787206": {
+        "None_answer": 6,
+        "correct": 0,
+        "incorrect": 20,
+        "unique_answers": 5
+    },
+    "5636a94ea130ebbfb435c573be57d9d76ff201fdd18ff872734b60ea6181d9a8": {
+        "None_answer": 1,
+        "correct": 1,
+        "incorrect": 19,
+        "unique_answers": 8
+    },
+    "5a1661f494cb8dd5c6951ef5a12d00cb2cffd41370c50f11de57602f94c0f842": {
         "None_answer": 9,
-        "correct": 2,
-        "incorrect": 18,
-        "unique_answers": 6
-    },
-    "96fa1dc4f876f66372791dcbc5eccb226581d92b6954834391467a10631834ca": {
-        "None_answer": 9,
-        "correct": 6,
-        "incorrect": 14,
-        "unique_answers": 7
-    },
-    "a7ec0c5e6994a41fbcaead6d1545f8d5af1aea2e24de15d61a5785785ded07ae": {
-        "None_answer": 2,
         "correct": 1,
         "incorrect": 19,
         "unique_answers": 12
     },
-    "a8373bae587193840cda1c346d8e3ea59ca159d6a9ce17e48d9f9e90c93eca20": {
-        "None_answer": 8,
-        "correct": 9,
-        "incorrect": 11,
-        "unique_answers": 5
+    "669e9b992c2347b5d41e19edfd79b3beed4ebe773311336642741e41e0956439": {
+        "None_answer": 14,
+        "correct": 1,
+        "incorrect": 19,
+        "unique_answers": 7
     },
-    "af45985718dbdeb7bfda4d8007f3c44be0ece9f30ddaebbc7ccf32cbf3fdb464": {
-        "None_answer": 10,
-        "correct": 2,
-        "incorrect": 18,
-        "unique_answers": 6
+    "676c9cd65947acec18af20fd819607f2aa5ebf272d7fe597c469ada2494da619": {
+        "None_answer": 0,
+        "correct": 20,
+        "incorrect": 0,
+        "unique_answers": 1
     },
-    "b847c49af6b784ecde7490d24bfdd74dc0a8f96e7714343f18f806542c0e9d2c": {
-        "None_answer": 11,
+    "6f826eeeb32fe26b422263ac9c2af91b5c63e6d00b0554adb40efb6a969a2f1c": {
+        "None_answer": 2,
         "correct": 0,
         "incorrect": 20,
-        "unique_answers": 10
+        "unique_answers": 13
     },
-    "b9dc1e30081a5b3a833dd18bc7d9022728504838baeff3faf7f3ac433af11605": {
+    "748fc87fd6b99cbe0a507326ea3e2290e6b6526b7287d989b3f014cca8c2389e": {
+        "None_answer": 0,
+        "correct": 13,
+        "incorrect": 7,
+        "unique_answers": 5
+    },
+    "77cbd4a3ffcdef3e1155c4c7d065bff2fda72ccf66b47222559a39f533fe3116": {
+        "None_answer": 1,
+        "correct": 19,
+        "incorrect": 1,
+        "unique_answers": 2
+    },
+    "7f2ab01483889cfad6fdb67d5fbaef78f7430a4ab85667750366538c5c1728d3": {
+        "None_answer": 14,
+        "correct": 0,
+        "incorrect": 20,
+        "unique_answers": 3
+    },
+    "8e9ff496644fcd4d69d0b4aedf2e86a6b62369667f868a4f8e48cfffa715f3dc": {
+        "None_answer": 1,
+        "correct": 2,
+        "incorrect": 18,
+        "unique_answers": 13
+    },
+    "96fa1dc4f876f66372791dcbc5eccb226581d92b6954834391467a10631834ca": {
+        "None_answer": 12,
+        "correct": 5,
+        "incorrect": 15,
+        "unique_answers": 5
+    },
+    "a7ec0c5e6994a41fbcaead6d1545f8d5af1aea2e24de15d61a5785785ded07ae": {
         "None_answer": 4,
         "correct": 0,
         "incorrect": 20,
-        "unique_answers": 5
-    },
-    "be35fa65c8286e9da2eec943a6887f62292d2b8187c92ac86b20889a5e7820b0": {
-        "None_answer": 0,
-        "correct": 0,
-        "incorrect": 20,
-        "unique_answers": 8
-    },
-    "bfbed79c844e2003686a600b6e789dc782149d321115cb4db3dd592cb77f8a9d": {
-        "None_answer": 6,
-        "correct": 0,
-        "incorrect": 20,
-        "unique_answers": 11
-    },
-    "c1f3b640748de13ac394d56d397da86602f09b2510757f682dc71d0db66ac01c": {
-        "None_answer": 8,
-        "correct": 0,
-        "incorrect": 20,
-        "unique_answers": 10
-    },
-    "cae0d30b56aafa0d692f3dd2438b2b291025f09477d11eea4ad841aad3362b9e": {
-        "None_answer": 5,
-        "correct": 11,
-        "incorrect": 9,
         "unique_answers": 6
     },
-    "ccd6e1d1353dee121cebcd8040a20f702327e773fa35f90100fd8e0159c4b817": {
-        "None_answer": 9,
-        "correct": 0,
-        "incorrect": 20,
-        "unique_answers": 8
+    "a8373bae587193840cda1c346d8e3ea59ca159d6a9ce17e48d9f9e90c93eca20": {
+        "None_answer": 1,
+        "correct": 17,
+        "incorrect": 3,
+        "unique_answers": 4
     },
-    "cfd7f7299ccd994731637a51120b5586f984d56da376de03a96f7f3b48287d1e": {
-        "None_answer": 7,
+    "af45985718dbdeb7bfda4d8007f3c44be0ece9f30ddaebbc7ccf32cbf3fdb464": {
+        "None_answer": 15,
+        "correct": 2,
+        "incorrect": 18,
+        "unique_answers": 4
+    },
+    "b847c49af6b784ecde7490d24bfdd74dc0a8f96e7714343f18f806542c0e9d2c": {
+        "None_answer": 0,
         "correct": 1,
         "incorrect": 19,
         "unique_answers": 10
     },
-    "d560e00ed2abf2af290cefd40fa5894bbf0c16f9bfd59c126ffd25130bd22aaa": {
-        "None_answer": 3,
-        "correct": 0,
-        "incorrect": 20,
+    "b9dc1e30081a5b3a833dd18bc7d9022728504838baeff3faf7f3ac433af11605": {
+        "None_answer": 8,
+        "correct": 1,
+        "incorrect": 19,
         "unique_answers": 10
     },
-    "date": "2026-05-16",
-    "e0ea3794b67e8a7a8cb10318291b15254b82ce8af103bf29e2d4761334aa0eae": {
+    "be35fa65c8286e9da2eec943a6887f62292d2b8187c92ac86b20889a5e7820b0": {
+        "None_answer": 14,
+        "correct": 0,
+        "incorrect": 20,
+        "unique_answers": 4
+    },
+    "bfbed79c844e2003686a600b6e789dc782149d321115cb4db3dd592cb77f8a9d": {
+        "None_answer": 4,
+        "correct": 0,
+        "incorrect": 20,
+        "unique_answers": 4
+    },
+    "c1f3b640748de13ac394d56d397da86602f09b2510757f682dc71d0db66ac01c": {
+        "None_answer": 1,
+        "correct": 0,
+        "incorrect": 20,
+        "unique_answers": 13
+    },
+    "cae0d30b56aafa0d692f3dd2438b2b291025f09477d11eea4ad841aad3362b9e": {
+        "None_answer": 12,
+        "correct": 7,
+        "incorrect": 13,
+        "unique_answers": 3
+    },
+    "ccd6e1d1353dee121cebcd8040a20f702327e773fa35f90100fd8e0159c4b817": {
         "None_answer": 13,
         "correct": 0,
         "incorrect": 20,
         "unique_answers": 6
     },
-    "e7ce23ab8481b9fdfcf611787fd5e76b8270aa5eee281483b7f6a2ae9bd79920": {
-        "None_answer": 16,
+    "cfd7f7299ccd994731637a51120b5586f984d56da376de03a96f7f3b48287d1e": {
+        "None_answer": 10,
+        "correct": 1,
+        "incorrect": 19,
+        "unique_answers": 9
+    },
+    "d560e00ed2abf2af290cefd40fa5894bbf0c16f9bfd59c126ffd25130bd22aaa": {
+        "None_answer": 0,
         "correct": 0,
         "incorrect": 20,
-        "unique_answers": 5
+        "unique_answers": 2
+    },
+    "date": "2026-05-16",
+    "e0ea3794b67e8a7a8cb10318291b15254b82ce8af103bf29e2d4761334aa0eae": {
+        "None_answer": 0,
+        "correct": 0,
+        "incorrect": 20,
+        "unique_answers": 9
+    },
+    "e7ce23ab8481b9fdfcf611787fd5e76b8270aa5eee281483b7f6a2ae9bd79920": {
+        "None_answer": 3,
+        "correct": 1,
+        "incorrect": 19,
+        "unique_answers": 9
     },
     "fdfec5d148d453bcdc6a5f897197bba8a7d8afba22a279c1b1d02f9b612b9929": {
-        "None_answer": 3,
-        "correct": 12,
-        "incorrect": 8,
-        "unique_answers": 5
+        "None_answer": 12,
+        "correct": 8,
+        "incorrect": 12,
+        "unique_answers": 2
     },
-    "model": "ggml-org/gemma-3-1b-it-GGUF",
+    "model": "LiquidAI/LFM2.5-1.2B-Thinking-GGUF",
     "repeats": 20
 }

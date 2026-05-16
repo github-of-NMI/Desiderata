@@ -1,15 +1,26 @@
-from huggingface_hub import scan_cache_dir
+from huggingface_hub import scan_cache_dir, snapshot_download
+from contextlib import redirect_stderr
 from tqdm import tqdm
 import ast
 import re
 import os
 import hashlib
 import json
-import sys
 import subprocess
 import requests
 import time
 from datetime import date
+
+class bcolors:
+    HEADER = '\033[95m'
+    OKBLUE = '\033[94m'
+    OKCYAN = '\033[96m'
+    OKGREEN = '\033[92m'
+    WARNING = '\033[93m'
+    FAIL = '\033[91m'
+    ENDC = '\033[0m'
+    BOLD = '\033[1m'
+    UNDERLINE = '\033[4m'
 
 def extract_last_boxed(text):
     matches = re.findall(r'\\boxed\{(.*)\}', text)
@@ -35,8 +46,8 @@ def read_state():
     qna_path = "closedAI_bench/qnas.txt"
     qnas = set()
     with open(qna_path, "r") as f:
-        for l in f.read().splitlines():
-            tup = ast.literal_eval(l)
+        for line in f.read().splitlines():
+            tup = ast.literal_eval(line)
             assert type(tup) is tuple
             qnas.add(tup)
 
@@ -61,92 +72,108 @@ def read_state():
     return models_to_evaluate, qnas, noises, repeats
 
 def start_proc():
+    subprocess.run(["killall", "llama-server"], capture_output=True, text=True)
+    print("[INFO]: killed all llama-server instances")
+    print(f"[INFO]: Downloading {model} into cache...")
+    with open(os.devnull, 'w') as devnull:
+        with redirect_stderr(devnull):
+            snapshot_download(repo_id=model)
+    print(f"[INFO]: {model} downloaded")#TODO: add timer for download
     server_cmd = [
         "llama-server",
         "-hf", model,
         "-c", "0",
-        "--port", "5000"
+        "--port", "5000",
+        "--jinja"
     ]
     process = subprocess.Popen(
         server_cmd,
-        stdout=subprocess.PIPE,
-        stderr=subprocess.PIPE,
+        stdout=subprocess.DEVNULL,
+        stderr=subprocess.DEVNULL,
         text=True
     )
     for _ in range(60):  # Try for 60 seconds
         try:
+            time.sleep(1)
             # Check the health endpoint
-            response = requests.get("http://localhost:5000/health")
+            response = requests.get("http://localhost:5000/health", timeout=5)
             if response.status_code == 200:
                 break
-        except requests.exceptions.ConnectionError:
-            time.sleep(1)
+        except Exception as e:
+            print(e)
     else:
         process.terminate()
         raise TimeoutError("llama-server took too long to start.")
     return process
 
 models, qnas, noises, repeats= read_state()
-print(models)
-print(f"models: {len(models)}")
-print(f"qnas: {len(qnas)}")
-print(f"noises: {len(noises)}")
-print(f"repeats: {repeats}")
-print(f"total: {len(models) * len(qnas) * len(noises) * repeats}")
+print("Execution parameters:")
+print(f"\tmodels: {len(models)}")
+print(f"\tqnas: {len(qnas)}")
+print(f"\tnoises: {len(noises)}")
+print(f"\trepeats: {repeats}")
+print(f"\ttotal: {len(models) * len(qnas) * len(noises) * repeats}")
+print()
 ans_in_boxed = "\nPut the final value in a markdown \\boxed{}.\n"
 for model in models:
-    print(model)
-    stats = dict()
-    stats["date"]    = f"{date.today()}"
-    stats["model"]   = model
-    stats["repeats"] = repeats
-    
+    try:
+        print(f"\n[INFO]: starting the execution on: {model}")
+        stats = dict()
+        stats["date"]    = f"{date.today()}"
+        stats["model"]   = model
+        stats["repeats"] = repeats
 
-    process = start_proc()
-    
 
-    for fullq, correct_ans in tqdm([(noise + q + ans_in_boxed, correct_ans,) for noise in noises for q, correct_ans in qnas], smoothing=0):
-            qhash = hashlib.sha256(fullq.encode()).hexdigest()
-            stats[qhash]                = dict()
-            stats[qhash]["correct"]     = 0
-            stats[qhash]["incorrect"]   = 0
-            stats[qhash]["None_answer"] = 0
+        process = start_proc()
 
-            unique_ans = set()
-            for _ in tqdm(range(repeats)):
-                payload = {#TODO: thinking is disabled, limited compute
-                    "prompt": fullq,
-                    "n_predict": 1024,
-                    "stream": False  # Set to True if you want to process tokens one by one
-                }
-                response = requests.post("http://localhost:5000/completion", json=payload)
-                response.raise_for_status()
-                data = response.json()
-                response = data["content"]
 
-                response = re.sub(r'<think>.*?</think>', '', response, flags=re.DOTALL).strip()
-                ans = extract_last_boxed(response)
-                unique_ans.add(ans)
-                if ans is None:
-                    stats[qhash]["None_answer"] += 1
+        for fullq, correct_ans in tqdm([(noise + q + ans_in_boxed, correct_ans,) for noise in noises for q, correct_ans in qnas], smoothing=0):
+                qhash = hashlib.sha256(fullq.encode()).hexdigest()
+                stats[qhash]                = dict()
+                stats[qhash]["correct"]     = 0
+                stats[qhash]["incorrect"]   = 0
+                stats[qhash]["None_answer"] = 0
 
-                if correct_ans == "":#for questions that do not have a correct answer
-                    break
+                unique_ans = set()
+                for _ in range(repeats):#TODO: reimplement loop with map
+                    payload = {#TODO: thinking is disabled, limited compute
+                        "prompt": fullq,
+                        "n_predict": 1024,
+                        "stream": False
+                    }
+                    response = requests.post("http://localhost:5000/completion", json=payload)
+                    response.raise_for_status()
+                    data = response.json()
+                    response = data["content"]
 
-                if ans == correct_ans:
-                    stats[qhash]["correct"] += 1
-                else:
-                    stats[qhash]["incorrect"] += 1
-            
-            stats[qhash]["unique_answers"] = len(unique_ans)
-    
-    process.terminate()
-    process.wait(timeout=5)
-    process.kill()
+                    response = re.sub(r'<think>.*?</think>', '', response, flags=re.DOTALL).strip()
+                    ans = extract_last_boxed(response)
+                    unique_ans.add(ans)
+                    if ans is None:
+                        stats[qhash]["None_answer"] += 1
 
-    safe_model_name = model.replace("/", "_")
-    with open(f"results/{safe_model_name}.json", "w+") as f:
-        json.dump(stats, f, sort_keys=True, indent=4)
+                    if correct_ans == "":#for questions that do not have a correct answer
+                        break
+
+                    if ans == correct_ans:
+                        stats[qhash]["correct"] += 1
+                    else:
+                        stats[qhash]["incorrect"] += 1
+
+                stats[qhash]["unique_answers"] = len(unique_ans)
+
+        process.terminate()
+        process.wait(timeout=5)
+        process.kill()
+
+        safe_model_name = model.replace("/", "_")
+        with open(f"results/{safe_model_name}.json", "w+") as f:
+            json.dump(stats, f, sort_keys=True, indent=4)
+
+    except Exception as e:
+        print(f"[{bcolors.WARNING}ERROR{bcolors.ENDC}]: exception below, failed to complete {model}")
+        print(f"\t{e}")
+
 
     cache_info = scan_cache_dir()
     repo_to_delete = next((r for r in cache_info.repos if r.repo_id == model), None)
@@ -154,4 +181,4 @@ for model in models:
         for revhash in [revision.commit_hash for revision in repo_to_delete.revisions]:
             to_delete = cache_info.delete_revisions(revhash)
             to_delete.execute()
-        print(f"deleted {model}")
+        print(f"[INFO]: deleted {model}")
